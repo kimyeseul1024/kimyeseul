@@ -4,148 +4,165 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>광주은광교회 비전찬양대 연습실</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --accent-color: #3498db;
-            --worship-color: #e67e22;
-            --bg-color: #f8f9fa;
-            --card-bg: #ffffff;
-            --text-color: #333333;
-            --border-color: #e9ecef;
+            --cathedral-dark: #121824;      /* 독일 고딕 대성당의 깊은 밤색/네이비 */
+            --cathedral-card: #1b2436;      /* 카드 배경 (성스러운 다크 톤) */
+            --gold-accent: #d4af37;        /* 천국의 빛, 골드 */
+            --heaven-glow: rgba(212, 175, 55, 0.15);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-gold: rgba(212, 175, 55, 0.3);
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            font-family: 'Noto Serif KR', serif;
+            background-color: var(--cathedral-dark);
+            color: var(--text-main);
             margin: 0;
-            padding: 20px;
-            line-height: 1.6;
+            padding: 20px 16px;
+            line-height: 1.7;
+            background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, var(--cathedral-dark) 70%);
+            background-attachment: fixed;
         }
 
         .container {
-            max-width: 650px;
+            max-width: 620px;
             margin: 0 auto;
+            padding-bottom: 50px;
         }
 
         header {
             text-align: center;
-            margin-bottom: 25px;
+            margin: 30px 0 40px;
         }
 
         header h1 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-bottom: 5px;
+            font-family: 'Cinzel', serif, 'Noto Serif KR';
+            color: var(--gold-accent);
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
         }
 
         header p {
-            color: #666;
+            color: var(--text-muted);
             font-size: 0.9rem;
             margin: 0;
+            letter-spacing: -0.5px;
         }
 
-        /* 공지사항 박스 스타일 */
+        /* 공지사항 & 대표기도 및 예배순서 카드 */
         .notice-card {
-            background: #fff3cd;
-            border: 1px solid #ffeeba;
-            color: #856404;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 25px;
-            font-size: 0.95rem;
+            background: linear-gradient(135deg, rgba(27, 36, 54, 0.95), rgba(30, 41, 59, 0.95));
+            border: 1px solid var(--border-gold);
+            color: var(--text-main);
+            padding: 22px;
+            border-radius: 14px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 0 15px var(--heaven-glow);
         }
 
         .notice-card h3 {
+            color: var(--gold-accent);
             margin: 0 0 12px 0;
-            font-size: 1.1rem;
-            font-weight: bold;
+            font-size: 1.05rem;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border-gold);
+            padding-bottom: 8px;
         }
 
         .notice-text {
-            margin: 0 0 15px 0;
-            padding-left: 20px;
+            margin: 0 0 16px 0;
+            padding-left: 18px;
+            font-size: 0.92rem;
+            color: #e2e8f0;
         }
 
         .notice-text li {
             margin-bottom: 5px;
         }
 
-        /* 대표기도 순서 칸 스타일 */
         .prayer-section {
-            background: #ffffff;
-            border: 1px solid #dee2e6;
-            border-radius: 6px;
-            padding: 12px 15px;
-            margin-top: 15px;
+            background: rgba(18, 24, 36, 0.6);
+            border: 1px dashed var(--border-gold);
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin-top: 14px;
         }
 
         .prayer-title {
-            font-size: 0.9rem;
-            font-weight: bold;
-            color: #d35400;
-            margin-bottom: 8px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--gold-accent);
+            margin-bottom: 6px;
         }
 
         .prayer-list {
             margin: 0;
             padding-left: 18px;
             font-size: 0.9rem;
-            color: #2c3e50;
+            color: #cbd5e1;
         }
 
         .prayer-list li {
             margin-bottom: 3px;
         }
 
-        /* 섹션 타이틀 스타일 */
+        /* 섹션 타이틀 */
         .section-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin: 30px 0 15px 5px;
-            border-left: 4px solid var(--accent-color);
-            padding-left: 10px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--gold-accent);
+            margin: 35px 0 16px 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: -0.5px;
         }
 
         /* 날짜별 카드 스타일 */
         .schedule-card {
-            background: var(--card-bg);
-            border-radius: 10px;
-            padding: 20px;
+            background: var(--cathedral-card);
+            border-radius: 14px;
+            padding: 22px;
             margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            border: 1px solid var(--border-color);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .schedule-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 4px; height: 100%;
+            background: var(--gold-accent);
         }
 
         .date-badge {
             display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-bottom: 12px;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--gold-accent);
+            border: 1px solid var(--border-gold);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin-bottom: 16px;
         }
 
-        /* 곡 정보와 파트별 버튼을 나란히 배치하는 구조 */
+        /* 곡 한 줄 레이아웃 */
         .song-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
             flex-wrap: wrap;
-            margin-bottom: 12px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .song-row.last {
-            border-bottom: none;
             margin-bottom: 0;
-            padding-bottom: 0;
         }
 
         .song-info {
@@ -155,284 +172,20 @@
         }
 
         .song-title {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: var(--primary-color);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #ffffff;
             margin: 0;
         }
 
         .song-page {
-            font-size: 0.85rem;
-            color: #666;
-            font-weight: normal;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-weight: 400;
         }
 
-        /* 곡 제목 옆 파트별 버튼 그룹 */
+        /* 파트 버튼 그룹 */
         .part-buttons {
             display: flex;
             gap: 5px;
-            flex-wrap: wrap;
-        }
-
-        .part-buttons a {
-            text-decoration: none;
-            padding: 6px 10px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border: 1px solid #dee2e6;
-            transition: all 0.2s;
-        }
-
-        /* 합창 버튼 스타일 */
-        .btn-chorus {
-            background-color: var(--accent-color);
-            color: white;
-            border-color: #2980b9;
-        }
-        .btn-chorus:hover {
-            background-color: #2980b9;
-        }
-
-        /* 파트 버튼 스타일 */
-        .btn-part {
-            background-color: #f1f3f5;
-            color: #495057;
-        }
-        .btn-part:hover {
-            background-color: #e2e6ea;
-        }
-
-        /* 입례송/폐회송 합창 버튼 스타일 */
-        .btn-worship-chorus {
-            background-color: var(--worship-color);
-            color: white;
-            border-color: #d35400;
-        }
-        .btn-worship-chorus:hover {
-            background-color: #d35400;
-        }
-
-        /* 지난 영상 보기 버튼 스타일 */
-        .archive-card {
-            background: var(--card-bg);
-            border-radius: 8px;
-            padding: 15px 20px;
-            margin-bottom: 12px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-            border: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .archive-info {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .archive-date {
-            font-size: 0.8rem;
-            color: #666;
-            font-weight: bold;
-        }
-
-        .archive-title {
-            font-size: 1rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .btn-archive {
-            background-color: #e9ecef;
-            color: #333;
-            text-decoration: none;
-            padding: 8px 14px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: background 0.2s;
-        }
-
-        .btn-archive:hover {
-            background-color: #dee2e6;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 0.8rem;
-            color: #888;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <header>
-            <h1>🎶 광주은광교회 비전찬양대</h1>
-            <p>언제 어디서나 찬양을 준비하는 연습실입니다</p>
-        </header>
-
-        <!-- 공지사항 및 대표기도 영역 -->
-        <div class="notice-card">
-            <h3>📢 공지사항</h3>
-            <ul class="notice-text">
-                <li>11월부터는 <strong>중앙성가 35권</strong>으로 찬양드립니다.</li>
-                <li>연습 영상은 매주 업로드됩니다. 각 파트별 음원을 미리 숙지해 주세요.</li>
-            </ul>
-            
-            <div class="prayer-section">
-                <div class="prayer-title">🙏 대표기도 순서</div>
-                <ul class="prayer-list">
-                    <li>10/25: 염경진 집사</li>
-                    <li>11/01: 오명자 권사</li>
-                    <li>11/08: 오의근 집사</li>
-                    <li>11/15: 이종호 집사</li>
-                    <li>11/22: 이필윤 집사</li>
-                    <li><strong>11/29: 조명숙 권사</strong> (이번 주)</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- [ 연습 영상 섹션 ] -->
-        <div class="section-title">🎬 연습 영상</div>
-
-        <!-- 11월 22일 연습 일정 -->
-        <div class="schedule-card">
-            <span class="date-badge">11월 22일 주일</span>
-            
-            <!-- 본 찬양 -->
-            <div class="song-row">
-                <div class="song-info">
-                    <h2 class="song-title">주여 나의 손을 놓지 마소서</h2>
-                    <span class="song-page">p.06</span>
-                </div>
-                <div class="part-buttons">
-                    <a href="https://youtu.be/TvsKEarRbzo?si=rThdmaE1ZZqtsz5l" target="_blank" class="btn-chorus">합창</a>
-                    <a href="https://youtu.be/Pd01GTR2EWA?si=MGP2fHW2KelyElhB" target="_blank" class="btn-part">소프라노</a>
-                    <a href="https://youtu.be/2cqj5EmbXaQ?si=jYLWy5RuP9pXaQt8" target="_blank" class="btn-part">알토</a>
-                    <a href="여기에_테너_링크" target="_blank" class="btn-part">테너</a>
-                    <a href="https://youtu.be/ZoNWCXumiBM?si=M6PAQWgBB4rZt0-1" target="_blank" class="btn-part">베이스</a>
-                </div>
-            </div>
-
-            <!-- 입례송 -->
-            <div class="song-row">
-                <div class="song-info">
-                    <h2 class="song-title" style="font-size: 1rem; color: #b7791f;">🔔 입례송</h2>
-                </div>
-                <div class="part-buttons">
-                    <a href="https://youtu.be/cSBDy2iG1Po?si=YeqXXybseDbREQBp" target="_blank" class="btn-worship-chorus">합창</a>
-                    <a href="https://youtu.be/5KweMIM-Flc?si=D668jSG4V3P54nJK" target="_blank" class="btn-part">소프라노</a>
-                    <a href="https://youtu.be/K0YL8ELSIBw?si=LWDZqc78vQrYfQA4" target="_blank" class="btn-part">알토</a>
-                    <a href="https://youtu.be/4XA_fYAZNz0?si=PA1on_EFk33yXqkr" target="_blank" class="btn-part">테너</a>
-                    <a href="https://youtu.be/jwkiOo661bU?si=RRXZRTk7myjoDHPf" target="_blank" class="btn-part">베이스</a>
-                </div>
-            </div>
-
-            <!-- 폐회송 -->
-            <div class="song-row last">
-                <div class="song-info">
-                    <h2 class="song-title" style="font-size: 1rem; color: #b7791f;">✨ 폐회송</h2>
-                </div>
-                <div class="part-buttons">
-                    <a href="https://youtu.be/JmZuBy7htdg?si=ISmB_KUGz4m9t70q" target="_blank" class="btn-worship-chorus">합창</a>
-                    <a href="https://youtu.be/PzQe23B53r8?si=pamJHxeTN_16zl1X" target="_blank" class="btn-part">소프라노</a>
-                    <a href="https://youtu.be/GP5wDFzf5-Q?si=ew73usZeleTaqfGX" target="_blank" class="btn-part">알토</a>
-                    <a href="https://youtu.be/glsscDFs0MI?si=gkRgjrk48M1lKBLL" target="_blank" class="btn-part">테너</a>
-                    <a href="https://youtu.be/mf3VaX1abbk?si=cPENX9-C7fDuK1Pa" target="_blank" class="btn-part">베이스</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- 11월 29일 연습 일정 -->
-        <div class="schedule-card">
-            <span class="date-badge">11월 29일 주일</span>
-            
-            <!-- 본 찬양 -->
-            <div class="song-row">
-                <div class="song-info">
-                    <h2 class="song-title">나의 기도</h2>
-                    <span class="song-page">p.113</span>
-                </div>
-                <div class="part-buttons">
-                    <a href="https://youtu.be/HclAMolmvJY?si=rZoM6XOL_cv6__6Y" target="_blank" class="btn-chorus">합창</a>
-                    <a href="https://youtu.be/yjH1NCfIljo?si=COd2aTCjRUh8LV0b" target="_blank" class="btn-part">소프라노</a>
-                    <a href="https://youtu.be/B3HueZyscUI?si=JoI0W09DzsVH-ZvL" target="_blank" class="btn-part">알토</a>
-                    <a href="https://youtu.be/w80zThCwN5s?si=7DX93mIlW8oxpQYU" target="_blank" class="btn-part">테너</a>
-                    <a href="https://youtu.be/Pk3oYKwDt2o?si=-2-YPJUaVNH-28Vx" target="_blank" class="btn-part">베이스</a>
-                </div>
-            </div>
-
-            <!-- 입례송 -->
-            <div class="song-row">
-                <div class="song-info">
-                    <h2 class="song-title" style="font-size: 1rem; color: #b7791f;">🔔 입례송</h2>
-                </div>
-                <div class="part-buttons">
-                    <a href="여기에_입례송_합창" target="_blank" class="btn-worship-chorus">합창</a>
-                    <a href="여기에_입례송_소프라노" target="_blank" class="btn-part">소프라노</a>
-                    <a href="여기에_입례송_알토" target="_blank" class="btn-part">알토</a>
-                    <a href="여기에_입례송_테너" target="_blank" class="btn-part">테너</a>
-                    <a href="여기에_입례송_베이스" target="_blank" class="btn-part">베이스</a>
-                </div>
-            </div>
-
-            <!-- 폐회송 -->
-            <div class="song-row last">
-                <div class="song-info">
-                    <h2 class="song-title" style="font-size: 1rem; color: #b7791f;">✨ 폐회송</h2>
-                </div>
-                <div class="part-buttons">
-                    <a href="여기에_폐회송_합창" target="_blank" class="btn-worship-chorus">합창</a>
-                    <a href="여기에_폐회송_소프라노" target="_blank" class="btn-part">소프라노</a>
-                    <a href="여기에_폐회송_알토" target="_blank" class="btn-part">알토</a>
-                    <a href="여기에_폐회송_테너" target="_blank" class="btn-part">테너</a>
-                    <a href="여기에_폐회송_베이스" target="_blank" class="btn-part">베이스</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- [ 지난 영상 보기 섹션 ] -->
-        <div class="section-title">📁 지난 영상 보기</div>
-
-        <div class="archive-card">
-            <div class="archive-info">
-                <span class="archive-date">11월 15일 주일 (기도: 이종호 집사)</span>
-                <span class="archive-title">감사의 찬송 <span style="font-size:0.85rem; font-weight:normal; color:#666;">p.129</span></span>
-            </div>
-            <a href="여기에_11월15일_링크" target="_blank" class="btn-archive">영상 보기 ▶</a>
-        </div>
-
-        <div class="archive-card">
-            <div class="archive-info">
-                <span class="archive-date">11월 8일 주일 (기도: 오의근 집사)</span>
-                <span class="archive-title">주의 손에 나의 손을 포개고 <span style="font-size:0.85rem; font-weight:normal; color:#666;">p.14</span></span>
-            </div>
-            <a href="https://youtu.be/HlTClDnkxP8?si=hnbV5yMWfwOjeaXu" target="_blank" class="btn-archive">영상 보기 ▶</a>
-        </div>
-
-        <div class="archive-card">
-            <div class="archive-info">
-                <span class="archive-date">11월 1일 주일 (기도: 오명자 권사)</span>
-                <span class="archive-title">여겨주심으로 <span style="font-size:0.85rem; font-weight:normal; color:#666;">p.186</span></span>
-            </div>
-            <a href="https://youtu.be/oS7Rvag7QfE?si=vMMxeW3nZzyuflp7" target="_blank" class="btn-archive">영상 보기 ▶</a>
-        </div>
-
-        <div class="archive-card">
-            <div class="archive-info">
-                <span class="archive-date">10월 25일 주일 (기도: 염경진 집사)</span>
-                <span class="archive-title">이전 곡 제목 입력</span>
-            </div>
-            <a href="여기에_10월25일_링크" target="_blank" class="btn-archive">영상 보기 ▶</a>
-        </div>
-
-        <footer>
-            <p>&copy; Gwangju Eungwang Church Vision Choir. All rights reserved.</p>
-        </footer>
-    </div>
-
-</body>
-</html>
+            flex-wrap: wrap
