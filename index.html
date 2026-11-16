@@ -22,7 +22,6 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: var(--cathedral-dark);
-            /* 배경에 은은하고 고급스러운 금색 빗금(스트라이프) 패턴 오버레이 */
             background-image: 
                 repeating-linear-gradient(45deg, rgba(212, 175, 55, 0.03) 0, rgba(212, 175, 55, 0.03) 1px, transparent 0, transparent 50px),
                 radial-gradient(circle at 50% 0%, #1e293b 0%, var(--cathedral-dark) 80%);
@@ -45,12 +44,25 @@
             position: relative;
         }
 
-        /* 피아노 심볼 스타일 */
         .piano-icon {
             font-size: 2.2rem;
             color: var(--gold-accent);
             margin-bottom: 8px;
             text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* 오늘 날짜 배지 스타일 */
+        .today-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--gold-accent);
+            border: 1px solid var(--border-gold);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: -0.2px;
         }
 
         header h1 {
@@ -68,7 +80,7 @@
             margin: 0;
         }
 
-        /* 공지사항 카드 (금색 테두리 및 빛나는 효과) */
+        /* 공지사항 카드 */
         .notice-card {
             background: linear-gradient(135deg, rgba(23, 32, 51, 0.95), rgba(30, 41, 59, 0.95));
             border: 1px solid var(--border-gold);
@@ -80,7 +92,6 @@
             position: relative;
         }
 
-        /* 카드 상단 미니 골드바 포인트 */
         .notice-card::before, .schedule-card::before {
             content: '';
             position: absolute;
@@ -270,111 +281,3 @@
         }
 
         .archive-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-        .archive-date {
-            font-size: 0.75rem;
-            color: var(--gold-accent);
-            font-weight: 600;
-        }
-
-        .archive-title {
-            font-size: 0.92rem;
-            font-weight: 700;
-            color: #ffffff;
-        }
-
-        .btn-archive {
-            color: var(--gold-accent);
-            font-size: 0.82rem;
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        /* 재생목록 배너 */
-        .playlist-banner {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.18), rgba(23, 32, 51, 0.9));
-            border: 1px solid var(--border-gold);
-            border-radius: 12px;
-            padding: 18px;
-            margin-top: 25px;
-            text-align: center;
-            text-decoration: none;
-            display: block;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            transition: all 0.2s;
-        }
-
-        .playlist-banner:hover {
-            border-color: var(--gold-accent);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
-        }
-
-        .playlist-title {
-            font-size: 1.02rem;
-            font-weight: 700;
-            color: var(--gold-accent);
-            margin-bottom: 3px;
-        }
-
-        .playlist-desc {
-            font-size: 0.84rem;
-            color: var(--text-muted);
-            margin: 0;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 45px;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 20px;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <header>
-            <div class="piano-icon">🎹</div>
-            <h1>광주은광교회 비전찬양대</h1>
-            <p>언제 어디서나 은혜를 준비하는 거룩한 연습실</p>
-        </header>
-
-        <!-- 상단 고정: 입례송 & 폐회송 및 공지사항 영역 -->
-        <div class="notice-card">
-            <h3>📢 공지사항</h3>
-            <ul class="notice-text">
-                <li>11월부터는 <strong>중앙성가 35권</strong>으로 찬양드립니다.</li>
-                <li>연습 영상은 매주 업로드됩니다. 각 파트별 음원을 미리 숙지해 주세요.</li>
-            </ul>
-            
-            <div class="prayer-section">
-                <div class="prayer-title">🙏 대표기도 순서</div>
-                <ul class="prayer-list">
-                    <li>10/25: 염경진 집사</li>
-                    <li>11/01: 오명자 권사</li>
-                    <li>11/08: 오의근 집사</li>
-                    <li>11/15: 이종호 집사</li>
-                    <li>11/22: 이필윤 집사</li>
-                    <li><strong>11/29: 조명숙 권사</strong> (이번 주)</li>
-                </ul>
-            </div>
-
-            <!-- 상단 고정 입례송 -->
-            <div class="prayer-section" style="margin-top: 12px;">
-                <div class="song-row">
-                    <div class="song-info">
-                        <span class="prayer-title" style="margin-bottom:0;">🔔 입례송 연습</span>
-                    </div>
-                    <div class="part-buttons">
-                        <a href="https://youtu.be/cSBDy2iG1Po?si=YeqXXybseDbREQBp" target="_blank" class="btn-chorus">합창</a>
-                        <a href="https://youtu.be/5KweMIM-Flc?si=D668jSG4V3P54nJK" target="_blank" class="btn-part">소프라노</a>
-                        <a href="https://youtu.be/K0YL8ELSIBw?si=LWDZqc78vQrYfQA4" target="_blank" class="btn-part">알토</a>
-                        <a href="https://youtu.be/4XA_fYAZNz0?si=PA1on_EFk33yXqkr" target="_blank" class="btn-part">테너</a>
-                        <a href="
