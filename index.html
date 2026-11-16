@@ -206,22 +206,23 @@
             color: var(--text-muted);
         }
 
-        /* 지휘자 전달사항 칸 스타일 */
+        /* 지휘자 전달사항 칸 스타일 (내용 비움) */
         .conductor-note {
             margin-top: 14px;
-            padding-top: 12px;
+            padding-top: 10px;
             border-top: 1px dashed rgba(255, 255, 255, 0.1);
             font-size: 0.85rem;
             color: #cbd5e1;
             background: rgba(15, 21, 32, 0.4);
-            padding: 10px 12px;
+            padding: 8px 12px;
             border-radius: 6px;
+            min-height: 36px;
         }
 
         .conductor-title {
             font-weight: 700;
             color: var(--gold-accent);
-            margin-bottom: 3px;
+            margin-bottom: 2px;
             font-size: 0.8rem;
         }
 
@@ -446,10 +447,9 @@
                     <a href="https://youtu.be/ZoNWCXumiBM?si=M6PAQWgBB4rZt0-1" target="_blank" class="btn-part">베이스</a>
                 </div>
             </div>
-            <!-- 지휘자 전달사항 칸 -->
+            <!-- 지휘자 전달사항 칸 (내용 비움) -->
             <div class="conductor-note">
                 <div class="conductor-title">📌 지휘자 전달사항</div>
-                <div>후렴구 크레센도 표현에 유의해 주세요.</div>
             </div>
         </div>
 
@@ -469,10 +469,9 @@
                     <a href="https://youtu.be/Pk3oYKwDt2o?si=-2-YPJUaVNH-28Vx" target="_blank" class="btn-part">베이스</a>
                 </div>
             </div>
-            <!-- 지휘자 전달사항 칸 -->
+            <!-- 지휘자 전달사항 칸 (내용 비움) -->
             <div class="conductor-note">
                 <div class="conductor-title">📌 지휘자 전달사항</div>
-                <div>박자 및 호흡 유지에 신경 써 주세요.</div>
             </div>
         </div>
 
@@ -502,8 +501,39 @@
             <span class="btn-archive">시청하기 ▶</span>
         </a>
 
-        <!-- 11월 1일 -->
+        <!-- 11월 1일 (제목 반영) -->
         <a href="https://youtu.be/oS7Rvag7QfE?si=tUzH8gUFmIYzfZk0" target="_blank" class="archive-card">
             <div class="archive-left">
                 <img src="https://img.youtube.com/vi/oS7Rvag7QfE/hqdefault.jpg" alt="여겨주심으로" class="archive-thumb">
                 <div class="archive-info">
+                    <span class="archive-date">11월 1일 주일</span>
+                    <span class="archive-title">2026.11.01. 주일 1부 비전찬양대 "여겨주심으로" <span style="font-size:0.8rem; font-weight:normal; color:var(--text-muted);">p.186</span></span>
+                </div>
+            </div>
+            <span class="btn-archive">시청하기 ▶</span>
+        </a>
+
+        <!-- 재생목록 배너 -->
+        <a href="https://youtube.com/playlist?list=PLrM9jhLzTA6OaqTPzFxU-nN9vFwt0H0XI&si=8sZBsba0lcaxlW0w" target="_blank" class="playlist-banner">
+            <div class="playlist-title">🎵 광주은광교회 '찬양대' 재생목록 전체보기</div>
+            <p class="playlist-desc">유튜브에서 더 많은 찬양대 영상을 연속으로 확인하세요 ▶</p>
+        </a>
+
+        <footer>
+            <p>&copy; Gwangju Eungwang Church Vision Choir. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // 접속하는 당일의 날짜를 자동으로 계산하여 상단에 표시
+        const d = new Date();
+        const year = d.getFullYear();
+        const month = String(d.getMonth() + 1).padStart(2, '0');
+        const day = String(d.getDate()).padStart(2, '0');
+        const days = ['일', '월', '화', '수', '목', '금', '토'];
+        const dayOfWeek = days[d.getDay()];
+        
+        document.getElementById('today-date-badge').innerText = `📅 오늘 날짜: ${year}년 ${month}월 ${day}일 (${dayOfWeek})`;
+    </script>
+</body>
+</html>
