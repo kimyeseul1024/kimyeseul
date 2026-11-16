@@ -337,8 +337,8 @@
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.18), rgba(23, 32, 51, 0.9));
             border: 1px solid var(--border-gold);
             border-radius: 12px;
-            padding: 18px;
-            margin-top: 25px;
+            padding: 16px;
+            margin-bottom: 18px;
             text-align: center;
             text-decoration: none;
             display: block;
@@ -353,15 +353,9 @@
         }
 
         .playlist-title {
-            font-size: 1.02rem;
+            font-size: 0.98rem;
             font-weight: 700;
             color: var(--gold-accent);
-            margin-bottom: 3px;
-        }
-
-        .playlist-desc {
-            font-size: 0.84rem;
-            color: var(--text-muted);
             margin: 0;
         }
 
@@ -402,8 +396,13 @@
             </div>
         </div>
 
-        <!-- 연습하기 섹션 (입례송 & 폐회송) -->
-        <div class="section-title">✨ 연습하기</div>
+        <!-- 연습하기 섹션 -->
+        <div class="section-title" style="margin-top: 0;">✨ 연습하기</div>
+
+        <!-- 연습곡 전체 재생목록 버튼 (연습하기 타이틀 바로 아래 배치) -->
+        <a href="https://youtube.com/playlist?list=PLaT67Z_sWs3I&si=-q4nvbXYF7zENIbn" target="_blank" class="playlist-banner">
+            <div class="playlist-title">🎶 연습곡 전체 재생목록 바로가기</div>
+        </a>
 
         <!-- 입례송 -->
         <div class="schedule-card" style="padding: 16px 20px;">
@@ -436,12 +435,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- 연습곡 전체 재생목록 버튼 (올바른 링크 적용) -->
-        <a href="https://youtube.com/playlist?list=PLaT67Z_sWs3I&si=-q4nvbXYF7zENIbn" target="_blank" class="playlist-banner" style="margin-top: 35px; margin-bottom: 18px; padding: 14px;">
-            <div class="playlist-title" style="font-size: 0.95rem;">🎶 연습곡 전체 재생목록 바로가기</div>
-            <p class="playlist-desc">유튜브에서 이번 주 연습곡들을 연속으로 재생하세요 ▶</p>
-        </a>
 
         <!-- 11월 22일 본 찬양 -->
         <div class="schedule-card">
@@ -525,10 +518,10 @@
             <span class="btn-archive">시청하기 ▶</span>
         </a>
 
-        <!-- 재생목록 배너 (올바른 링크 적용) -->
-        <a href="https://youtube.com/playlist?list=PLaT67Z_sWs3I&si=-q4nvbXYF7zENIbn" target="_blank" class="playlist-banner">
+        <!-- 재생목록 배너 -->
+        <a href="https://youtube.com/playlist?list=PLaT67Z_sWs3I&si=-q4nvbXYF7zENIbn" target="_blank" class="playlist-banner" style="margin-top: 25px;">
             <div class="playlist-title">🎵 광주은광교회 '찬양대' 재생목록 전체보기</div>
-            <p class="playlist-desc">더 많은 영상은 광주은광교회 유튜브 재생목록 '찬양대'에서 ▶</p>
+            <p style="font-size: 0.84rem; color: var(--text-muted); margin: 3px 0 0 0;">더 많은 영상은 광주은광교회 유튜브 재생목록 '찬양대'에서 ▶</p>
         </a>
 
         <footer>
