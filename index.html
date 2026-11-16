@@ -7,13 +7,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --cathedral-dark: #121824;      /* 독일 고딕 대성당의 깊은 밤색/네이비 */
-            --cathedral-card: #1b2436;      /* 카드 배경 (성스러운 다크 톤) */
-            --gold-accent: #d4af37;        /* 천국의 빛, 골드 */
+            --cathedral-dark: #121824;
+            --cathedral-card: #1b2436;
+            --gold-accent: #d4af37;
             --heaven-glow: rgba(212, 175, 55, 0.15);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --border-gold: rgba(212, 175, 55, 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
@@ -23,8 +27,6 @@
             margin: 0;
             padding: 20px 16px;
             line-height: 1.7;
-            background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, var(--cathedral-dark) 70%);
-            background-attachment: fixed;
         }
 
         .container {
@@ -35,112 +37,97 @@
 
         header {
             text-align: center;
-            margin: 30px 0 40px;
+            margin: 20px 0 30px;
         }
 
         header h1 {
             font-family: 'Cinzel', serif, 'Noto Serif KR';
             color: var(--gold-accent);
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            margin: 0 0 8px 0;
+            margin: 0 0 6px 0;
             letter-spacing: 1px;
-            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
         }
 
         header p {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             margin: 0;
-            letter-spacing: -0.5px;
         }
 
-        /* 공지사항 & 대표기도 및 입례/폐회송 안내 영역 */
+        /* 공지사항 카드 */
         .notice-card {
-            background: linear-gradient(135deg, rgba(27, 36, 54, 0.95), rgba(30, 41, 59, 0.95));
+            background: rgba(27, 36, 54, 0.95);
             border: 1px solid var(--border-gold);
             color: var(--text-main);
-            padding: 22px;
-            border-radius: 14px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 0 15px var(--heaven-glow);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .notice-card h3 {
             color: var(--gold-accent);
-            margin: 0 0 12px 0;
-            font-size: 1.05rem;
-            font-weight: 700;
+            margin: 0 0 10px 0;
+            font-size: 1.02rem;
             border-bottom: 1px solid var(--border-gold);
-            padding-bottom: 8px;
+            padding-bottom: 6px;
         }
 
         .notice-text {
-            margin: 0 0 16px 0;
-            padding-left: 18px;
-            font-size: 0.92rem;
+            margin: 0 0 12px 0;
+            padding-left: 16px;
+            font-size: 0.9rem;
             color: #e2e8f0;
         }
 
         .notice-text li {
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
         .prayer-section {
-            background: rgba(18, 24, 36, 0.6);
+            background: rgba(18, 24, 36, 0.7);
             border: 1px dashed var(--border-gold);
-            border-radius: 10px;
-            padding: 14px 16px;
-            margin-top: 14px;
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin-top: 10px;
         }
 
         .prayer-title {
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             font-weight: 700;
             color: var(--gold-accent);
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .prayer-list {
             margin: 0;
-            padding-left: 18px;
-            font-size: 0.9rem;
+            padding-left: 16px;
+            font-size: 0.88rem;
             color: #cbd5e1;
         }
 
         .prayer-list li {
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
 
         /* 섹션 타이틀 */
         .section-title {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: var(--gold-accent);
-            margin: 35px 0 16px 4px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            letter-spacing: -0.5px;
+            margin: 30px 0 14px 2px;
         }
 
-        /* 날짜별 카드 스타일 */
+        /* 날짜별 카드 */
         .schedule-card {
             background: var(--cathedral-card);
-            border-radius: 14px;
-            padding: 22px;
-            margin-bottom: 20px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             border: 1px solid var(--border-gold);
             position: relative;
-            overflow: hidden;
-        }
-
-        .schedule-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 4px; height: 100%;
-            background: var(--gold-accent);
         }
 
         .date-badge {
@@ -148,74 +135,111 @@
             background: rgba(212, 175, 55, 0.15);
             color: var(--gold-accent);
             border: 1px solid var(--border-gold);
-            padding: 4px 12px;
-            border-radius: 6px;
-            font-size: 0.82rem;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
             font-weight: 600;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
-        /* 곡 한 줄 레이아웃 */
+        /* 곡 항목 행 */
         .song-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .song-row.last {
+            border-bottom: none;
             margin-bottom: 0;
+            padding-bottom: 0;
         }
 
         .song-info {
             display: flex;
             align-items: baseline;
-            gap: 8px;
+            gap: 6px;
         }
 
         .song-title {
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 700;
             color: #ffffff;
             margin: 0;
         }
 
         .song-page {
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
-            font-weight: 400;
         }
 
         /* 파트 버튼 그룹 */
         .part-buttons {
             display: flex;
-            gap: 5px;
+            gap: 4px;
             flex-wrap: wrap;
         }
 
         .part-buttons a {
             text-decoration: none;
-            padding: 6px 10px;
-            border-radius: 6px;
-            font-size: 0.8rem;
+            padding: 5px 8px;
+            border-radius: 4px;
+            font-size: 0.78rem;
             font-weight: 600;
             border: 1px solid rgba(255, 255, 255, 0.12);
-            transition: all 0.2s ease;
         }
 
-        /* 합창 버튼 (천국의 골드빛 강조) */
         .btn-chorus {
             background-color: var(--gold-accent);
             color: #121824 !important;
             border-color: var(--gold-accent) !important;
             font-weight: 700;
         }
-        .btn-chorus:hover {
-            background-color: #e6c547;
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-        }
 
-        /* 파트별 버튼 */
         .btn-part {
             background-color: rgba(255, 255, 255, 0.06);
             color: #cbd5e1;
         }
-        .btn-part:hover {
+
+        /* 지난 영상 아카이브 카드 */
+        .archive-card {
+            background: var(--cathedral-card);
+            border-radius: 10px;
+            padding: 12px 14px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .archive-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .archive-thumb {
+            width: 70px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: #000;
+        }
+
+        .archive-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .archive-date {
+            font-size
