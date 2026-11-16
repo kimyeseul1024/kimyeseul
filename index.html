@@ -324,6 +324,14 @@
             white-space: nowrap;
         }
 
+        .btn-coming {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            white-space: nowrap;
+            font-style: italic;
+        }
+
         /* 재생목록 배너 */
         .playlist-banner {
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.18), rgba(23, 32, 51, 0.9));
@@ -474,8 +482,8 @@
 
         <div class="section-title">📁 지난 영상 보기</div>
 
-        <!-- 11월 15일 -->
-        <a href="#" class="archive-card">
+        <!-- 11월 15일 (Coming Soon 적용) -->
+        <div style="background: var(--cathedral-card); border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.08); display: flex; justify-content: space-between; align-items: center;">
             <div class="archive-left">
                 <div style="width: 75px; height: 45px; background: rgba(255,255,255,0.05); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; color: var(--text-muted); border: 1px solid rgba(212,175,55,0.2);">🎹</div>
                 <div class="archive-info">
@@ -483,8 +491,8 @@
                     <span class="archive-title">감사의 찬송 <span style="font-size:0.8rem; font-weight:normal; color:var(--text-muted);">p.129</span></span>
                 </div>
             </div>
-            <span class="btn-archive">시청하기 ▶</span>
-        </a>
+            <span class="btn-coming">Coming Soon</span>
+        </div>
 
         <!-- 11월 8일 -->
         <a href="https://youtu.be/HlTClDnkxP8?si=209gkNO18zFecyjx" target="_blank" class="archive-card">
@@ -494,13 +502,3 @@
                     <span class="archive-date">11월 8일 주일</span>
                     <span class="archive-title">주의 손에 나의 손을 포개고 <span style="font-size:0.8rem; font-weight:normal; color:var(--text-muted);">p.14</span></span>
                 </div>
-            </div>
-            <span class="btn-archive">시청하기 ▶</span>
-        </a>
-
-        <!-- 11월 1일 -->
-        <a href="https://youtu.be/oS7Rvag7QfE?si=tUzH8gUFmIYzfZk0" target="_blank" class="archive-card">
-            <div class="archive-left">
-                <img src="https://img.youtube.com/vi/oS7Rvag7QfE/hqdefault.jpg" alt="여겨주심으로" class="archive-thumb">
-                <div class="archive-info">
-                    <span class="archive-
