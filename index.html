@@ -68,15 +68,9 @@
             color: var(--gold-accent);
             font-size: 1.6rem;
             font-weight: 700;
-            margin: 0 0 6px 0;
+            margin: 0;
             letter-spacing: 1.5px;
             text-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
-        }
-
-        header p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin: 0;
         }
 
         /* 공지사항 카드 */
@@ -332,16 +326,17 @@
             font-style: italic;
         }
 
-        /* 재생목록 배너 */
+        /* 재생목록 배너 (썸네일 포함 스타일) */
         .playlist-banner {
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.18), rgba(23, 32, 51, 0.9));
             border: 1px solid var(--border-gold);
             border-radius: 12px;
-            padding: 16px;
+            padding: 14px 16px;
             margin-bottom: 18px;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             text-decoration: none;
-            display: block;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             transition: all 0.2s;
         }
@@ -352,10 +347,33 @@
             box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
         }
 
+        .playlist-thumb {
+            width: 75px;
+            height: 45px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            background: #000;
+        }
+
+        .playlist-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            flex-grow: 1;
+            margin-left: 14px;
+        }
+
         .playlist-title {
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             font-weight: 700;
             color: var(--gold-accent);
+            margin: 0;
+        }
+
+        .playlist-desc {
+            font-size: 0.78rem;
+            color: var(--text-muted);
             margin: 0;
         }
 
@@ -376,7 +394,6 @@
             <div class="piano-icon">🎹</div>
             <div class="today-badge" id="today-date-badge">📅 오늘 날짜: 로딩 중...</div>
             <h1>광주은광교회 비전찬양대</h1>
-            <p>언제 어디서나 은혜를 준비하는 연습실</p>
         </header>
 
         <!-- 공지사항 카드 (대표기도 순서 포함) -->
@@ -399,9 +416,13 @@
         <!-- 연습하기 섹션 -->
         <div class="section-title" style="margin-top: 0;">✨ 연습하기</div>
 
-        <!-- 연습곡 전체 재생목록 버튼 (연습하기 타이틀 바로 아래 배치) -->
+        <!-- 상단 연습곡 전체 재생목록 버튼 (썸네일 포함) -->
         <a href="https://youtube.com/playlist?list=PLaT67Z_sWs3I&si=-q4nvbXYF7zENIbn" target="_blank" class="playlist-banner">
-            <div class="playlist-title">🎶 연습곡 전체 재생목록 바로가기</div>
+            <img src="https://img.youtube.com/vi/HlTClDnkxP8/hqdefault.jpg" alt="재생목록 썸네일" class="playlist-thumb">
+            <div class="playlist-info">
+                <div class="playlist-title">🎶 연습곡 전체 재생목록 바로가기</div>
+                <p class="playlist-desc">이번 주 연습곡 연속 재생 ▶</p>
+            </div>
         </a>
 
         <!-- 입례송 -->
@@ -518,27 +539,7 @@
             <span class="btn-archive">시청하기 ▶</span>
         </a>
 
-        <!-- 재생목록 배너 -->
+        <!-- 하단 재생목록 배너 (썸네일 포함) -->
         <a href="https://youtube.com/playlist?list=PLaT67Z_sWs3I&si=-q4nvbXYF7zENIbn" target="_blank" class="playlist-banner" style="margin-top: 25px;">
-            <div class="playlist-title">🎵 광주은광교회 '찬양대' 재생목록 전체보기</div>
-            <p style="font-size: 0.84rem; color: var(--text-muted); margin: 3px 0 0 0;">더 많은 영상은 광주은광교회 유튜브 재생목록 '찬양대'에서 ▶</p>
-        </a>
-
-        <footer>
-            <p>&copy; Gwangju Eungwang Church Vision Choir. All rights reserved.</p>
-        </footer>
-    </div>
-
-    <script>
-        // 접속하는 당일의 날짜를 자동으로 계산하여 상단에 표시
-        const d = new Date();
-        const year = d.getFullYear();
-        const month = String(d.getMonth() + 1).padStart(2, '0');
-        const day = String(d.getDate()).padStart(2, '0');
-        const days = ['일', '월', '화', '수', '목', '금', '토'];
-        const dayOfWeek = days[d.getDay()];
-        
-        document.getElementById('today-date-badge').innerText = `📅 오늘 날짜: ${year}년 ${month}월 ${day}일 (${dayOfWeek})`;
-    </script>
-</body>
-</html>
+            <img src="https://img.youtube.com/vi/HlTClDnkxP8/hqdefault.jpg" alt="재생목록 썸네일" class="playlist-thumb">
+            <div class="playlist
