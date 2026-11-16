@@ -8,6 +8,7 @@
         :root {
             --primary-color: #2c3e50;
             --accent-color: #3498db;
+            --worship-color: #e67e22;
             --bg-color: #f8f9fa;
             --card-bg: #ffffff;
             --text-color: #333333;
@@ -71,7 +72,7 @@
             margin-bottom: 5px;
         }
 
-        /* 대표기도 전용 분리 칸 스타일 */
+        /* 대표기도 순서 칸 스타일 */
         .prayer-section {
             background: #ffffff;
             border: 1px solid #dee2e6;
@@ -129,7 +130,7 @@
             margin-bottom: 12px;
         }
 
-        /* 곡 제목과 파트별 버튼을 나란히 배치하는 구조 */
+        /* 곡 정보와 파트별 버튼을 나란히 배치하는 구조 */
         .song-row {
             display: flex;
             justify-content: space-between;
@@ -137,8 +138,14 @@
             gap: 15px;
             flex-wrap: wrap;
             margin-bottom: 15px;
-            border-bottom: 1px solid var(--border-color);
             padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .song-row.last {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
 
         .song-info {
@@ -196,28 +203,14 @@
             background-color: #e2e6ea;
         }
 
-        /* 하단 예배 송참 버튼 */
-        .worship-buttons {
-            display: flex;
-            gap: 10px;
+        /* 입례송/폐회송 합창 버튼 스타일 */
+        .btn-worship-chorus {
+            background-color: var(--worship-color);
+            color: white;
+            border-color: #d35400;
         }
-
-        .worship-buttons a {
-            flex: 1;
-            text-align: center;
-            text-decoration: none;
-            padding: 10px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            background-color: #fff9db;
-            color: #b7791f;
-            border: 1px solid #ffe066;
-            transition: background 0.2s;
-        }
-
-        .worship-buttons a:hover {
-            background-color: #ffec99;
+        .btn-worship-chorus:hover {
+            background-color: #d35400;
         }
 
         /* 지난 영상 보기 버튼 스타일 */
@@ -289,7 +282,6 @@
                 <li>연습 영상은 매주 업로드됩니다. 각 파트별 음원을 미리 숙지해 주세요.</li>
             </ul>
             
-            <!-- 대표기도 순서 전체 목록 칸 -->
             <div class="prayer-section">
                 <div class="prayer-title">🙏 대표기도 순서</div>
                 <ul class="prayer-list">
@@ -310,62 +302,10 @@
         <div class="schedule-card">
             <span class="date-badge">11월 22일 주일</span>
             
+            <!-- 본 찬양 -->
             <div class="song-row">
                 <div class="song-info">
                     <h2 class="song-title">주여 나의 손을 놓지 마소서</h2>
                     <span class="song-page">p.06</span>
                 </div>
                 <div class="part-buttons">
-                    <a href="https://youtu.be/TvsKEarRbzo?si=rThdmaE1ZZqtsz5l" target="_blank" class="btn-chorus">합창</a>
-                    <a href="https://youtu.be/Pd01GTR2EWA?si=MGP2fHW2KelyElhB" target="_blank" class="btn-part">소프라노</a>
-                    <a href="https://youtu.be/2cqj5EmbXaQ?si=jYLWy5RuP9pXaQt8" target="_blank" class="btn-part">알토</a>
-                    <a href="여기에_테너_링크" target="_blank" class="btn-part">테너</a>
-                    <a href="https://youtu.be/ZoNWCXumiBM?si=M6PAQWgBB4rZt0-1" target="_blank" class="btn-part">베이스</a>
-                </div>
-            </div>
-
-            <!-- 입례송 / 폐회송 -->
-            <div class="worship-buttons">
-                <a href="여기에_입례송_링크" target="_blank">🔔 입례송 듣기</a>
-                <a href="여기에_폐회송_링크" target="_blank">✨ 폐회송 듣기</a>
-            </div>
-        </div>
-
-        <!-- 11월 29일 연습 일정 -->
-        <div class="schedule-card">
-            <span class="date-badge">11월 29일 주일</span>
-            
-            <div class="song-row">
-                <div class="song-info">
-                    <h2 class="song-title">나의 기도</h2>
-                    <span class="song-page">p.113</span>
-                </div>
-                <div class="part-buttons">
-                    <a href="여기에_합창_링크" target="_blank" class="btn-chorus">합창</a>
-                    <a href="여기에_소프라노_링크" target="_blank" class="btn-part">소프라노</a>
-                    <a href="여기에_알토_링크" target="_blank" class="btn-part">알토</a>
-                    <a href="여기에_테너_링크" target="_blank" class="btn-part">테너</a>
-                    <a href="여기에_베이스_링크" target="_blank" class="btn-part">베이스</a>
-                </div>
-            </div>
-
-            <div class="worship-buttons">
-                <a href="여기에_입례송_링크" target="_blank">🔔 입례송 듣기</a>
-                <a href="여기에_폐회송_링크" target="_blank">✨ 폐회송 듣기</a>
-            </div>
-        </div>
-
-        <!-- [ 지난 영상 보기 섹션 ] -->
-        <div class="section-title">📁 지난 영상 보기</div>
-
-        <div class="archive-card">
-            <div class="archive-info">
-                <span class="archive-date">11월 15일 주일 (기도: 이종호 집사)</span>
-                <span class="archive-title">감사의 찬송 <span style="font-size:0.85rem; font-weight:normal; color:#666;">p.129</span></span>
-            </div>
-            <a href="여기에_11월15일_링크" target="_blank" class="btn-archive">영상 보기 ▶</a>
-        </div>
-
-        <div class="archive-card">
-            <div class="archive-info">
-                <span class="archive-date">11월 8일 주일 (기도: 오의근 집사)
