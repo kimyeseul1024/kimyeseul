@@ -84,14 +84,18 @@
             font-size: 0.9rem;
             font-weight: bold;
             color: #d35400;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
-        .prayer-content {
-            font-size: 0.95rem;
-            color: #2c3e50;
-            font-weight: 500;
+        .prayer-list {
             margin: 0;
+            padding-left: 18px;
+            font-size: 0.9rem;
+            color: #2c3e50;
+        }
+
+        .prayer-list li {
+            margin-bottom: 3px;
         }
 
         /* 섹션 타이틀 스타일 */
@@ -183,7 +187,7 @@
             background-color: #2980b9;
         }
 
-        /* 파트 버튼 스타일 (소프라노, 알토, 테너, 베이스) */
+        /* 파트 버튼 스타일 */
         .btn-part {
             background-color: #f1f3f5;
             color: #495057;
@@ -192,7 +196,7 @@
             background-color: #e2e6ea;
         }
 
-        /* 하단 예배 송참 버튼 (입례송, 폐회송) */
+        /* 하단 예배 송참 버튼 */
         .worship-buttons {
             display: flex;
             gap: 10px;
@@ -285,9 +289,17 @@
                 <li>연습 영상은 매주 업로드됩니다. 각 파트별 음원을 미리 숙지해 주세요.</li>
             </ul>
             
+            <!-- 대표기도 순서 전체 목록 칸 -->
             <div class="prayer-section">
-                <div class="prayer-title">🙏 이번 주 대표기도 순서</div>
-                <p class="prayer-content">11월 22일(주일): <strong>이필윤 집사님</strong></p>
+                <div class="prayer-title">🙏 대표기도 순서</div>
+                <ul class="prayer-list">
+                    <li>10/25: 염경진 집사</li>
+                    <li>11/01: 오명자 권사</li>
+                    <li>11/08: 오의근 집사</li>
+                    <li>11/15: 이종호 집사</li>
+                    <li><strong>11/22: 이필윤 집사</strong> (이번 주)</li>
+                    <li>11/29: 조명숙 권사</li>
+                </ul>
             </div>
         </div>
 
@@ -321,7 +333,39 @@
 
         <!-- 11월 29일 연습 일정 -->
         <div class="schedule-card">
-            <span class="date-badge">11월 29일 주일 (기도: 조명숙 권사님)</span>
+            <span class="date-badge">11월 29일 주일</span>
             
             <div class="song-row">
                 <div class="song-info">
+                    <h2 class="song-title">나의 기도</h2>
+                    <span class="song-page">p.113</span>
+                </div>
+                <div class="part-buttons">
+                    <a href="여기에_합창_링크" target="_blank" class="btn-chorus">합창</a>
+                    <a href="여기에_소프라노_링크" target="_blank" class="btn-part">소프라노</a>
+                    <a href="여기에_알토_링크" target="_blank" class="btn-part">알토</a>
+                    <a href="여기에_테너_링크" target="_blank" class="btn-part">테너</a>
+                    <a href="여기에_베이스_링크" target="_blank" class="btn-part">베이스</a>
+                </div>
+            </div>
+
+            <div class="worship-buttons">
+                <a href="여기에_입례송_링크" target="_blank">🔔 입례송 듣기</a>
+                <a href="여기에_폐회송_링크" target="_blank">✨ 폐회송 듣기</a>
+            </div>
+        </div>
+
+        <!-- [ 지난 영상 보기 섹션 ] -->
+        <div class="section-title">📁 지난 영상 보기</div>
+
+        <div class="archive-card">
+            <div class="archive-info">
+                <span class="archive-date">11월 15일 주일 (기도: 이종호 집사)</span>
+                <span class="archive-title">감사의 찬송 <span style="font-size:0.85rem; font-weight:normal; color:#666;">p.129</span></span>
+            </div>
+            <a href="여기에_11월15일_링크" target="_blank" class="btn-archive">영상 보기 ▶</a>
+        </div>
+
+        <div class="archive-card">
+            <div class="archive-info">
+                <span class="archive-date">11월 8일 주일 (기도: 오의근 집사)
