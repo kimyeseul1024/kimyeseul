@@ -137,7 +137,15 @@
             align-items: center;
             gap: 15px;
             flex-wrap: wrap;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .song-row.last {
+            border-bottom: none;
             margin-bottom: 0;
+            padding-bottom: 0;
         }
 
         .song-info {
@@ -203,16 +211,6 @@
         }
         .btn-worship-chorus:hover {
             background-color: #d35400;
-        }
-
-        /* 예배 송참(입례/폐회송) 전용 하단 카드 스타일 */
-        .worship-card {
-            background: var(--card-bg);
-            border-radius: 10px;
-            padding: 18px 20px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            border: 1px solid var(--border-color);
         }
 
         /* 지난 영상 보기 버튼 스타일 */
@@ -291,8 +289,8 @@
                     <li>11/01: 오명자 권사</li>
                     <li>11/08: 오의근 집사</li>
                     <li>11/15: 이종호 집사</li>
-                    <li><strong>11/22: 이필윤 집사</strong> (이번 주)</li>
-                    <li>11/29: 조명숙 권사</li>
+                    <li>11/22: 이필윤 집사</li>
+                    <li><strong>11/29: 조명숙 권사</strong> (이번 주)</li>
                 </ul>
             </div>
         </div>
@@ -300,10 +298,11 @@
         <!-- [ 다가오는 주일 연습 일정 ] -->
         <div class="section-title">📅 이번 주 연습 & 예배 찬양</div>
 
-        <!-- 11월 22일 연습 일정 (본 찬양) -->
+        <!-- 11월 22일 연습 일정 -->
         <div class="schedule-card">
             <span class="date-badge">11월 22일 주일</span>
             
+            <!-- 본 찬양 -->
             <div class="song-row">
                 <div class="song-info">
                     <h2 class="song-title">주여 나의 손을 놓지 마소서</h2>
@@ -317,36 +316,14 @@
                     <a href="https://youtu.be/ZoNWCXumiBM?si=M6PAQWgBB4rZt0-1" target="_blank" class="btn-part">베이스</a>
                 </div>
             </div>
-        </div>
 
-        <!-- 11월 29일 연습 일정 (본 찬양) -->
-        <div class="schedule-card">
-            <span class="date-badge">11월 29일 주일</span>
-            
+            <!-- 입례송 -->
             <div class="song-row">
                 <div class="song-info">
-                    <h2 class="song-title">나의 기도</h2>
-                    <span class="song-page">p.113</span>
-                </div>
-                <div class="part-buttons">
-                    <a href="여기에_합창_링크" target="_blank" class="btn-chorus">합창</a>
-                    <a href="여기에_소프라노_링크" target="_blank" class="btn-part">소프라노</a>
-                    <a href="여기에_알토_링크" target="_blank" class="btn-part">알토</a>
-                    <a href="여기에_테너_링크" target="_blank" class="btn-part">테너</a>
-                    <a href="여기에_베이스_링크" target="_blank" class="btn-part">베이스</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- [ 입례송 & 폐회송 목록 ] -->
-        <div class="section-title">🔔 예배 순서 찬양 (입례송 / 폐회송)</div>
-
-        <!-- 입례송 -->
-        <div class="worship-card">
-            <div class="song-row">
-                <div class="song-info">
-                    <h2 class="song-title" style="font-size: 1.05rem; color: #b7791f;">🔔 입례송</h2>
+                    <h2 class="song-title" style="font-size: 1rem; color: #b7791f;">🔔 입례송</h2>
                 </div>
                 <div class="part-buttons">
                     <a href="https://youtu.be/cSBDy2iG1Po?si=YeqXXybseDbREQBp" target="_blank" class="btn-worship-chorus">합창</a>
                     <a href="https://youtu.be/5KweMIM-Flc?si=D668jSG4V3P54nJK" target="_blank" class="btn-part">소프라노</a>
+                    <a href="https://youtu.be/K0YL8ELSIBw?si=LWDZqc78vQrYfQA4" target="_blank" class="btn-part">알토</a>
+                    <a href="https://youtu.be/4XA_fYAZNz0?si=PA1on_EFk33yXqkr" target="_blank" class
