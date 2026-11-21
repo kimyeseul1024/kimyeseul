@@ -735,3 +735,28 @@
 
         <!-- 하단 재생목록 배너 (썸네일 포함) -->
         <a href="https://youtube.com/playlist?list=PLrM9jhLzTA6OaqTPzFxU-nN9vFwt0H0XI&si=dwsT5vgRNrtrNYuV" target="_blank" class="playlist-banner" style="margin-top: 25px;">
+            <img src="https://img.youtube.com/vi/2YUdwNvqUcc/hqdefault.jpg" alt="광주은광TV 재생목록 썸네일" class="playlist-thumb">
+            <div class="playlist-info">
+                <div class="playlist-title">🎵 광주은광교회 '찬양대' 재생목록 전체보기</div>
+                <p class="playlist-desc">더 많은 영상은 광주은광TV에서 ▶</p>
+            </div>
+        </a>
+
+        <footer>
+            <p>&copy; Gwangju Eungwang Church Vision Choir. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // 접속하는 당일의 날짜를 자동으로 계산하여 상단에 표시
+        const d = new Date();
+        const year = d.getFullYear();
+        const month = String(d.getMonth() + 1).padStart(2, '0');
+        const day = String(d.getDate()).padStart(2, '0');
+        const days = ['일', '월', '화', '수', '목', '금', '토'];
+        const dayOfWeek = days[d.getDay()];
+        
+        document.getElementById('today-date-badge').innerText = `📅 오늘 날짜: ${year}년 ${month}월 ${day}일 (${dayOfWeek})`;
+    </script>
+</body>
+</html>
