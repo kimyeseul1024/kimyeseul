@@ -186,6 +186,7 @@
             display: flex;
             align-items: baseline;
             gap: 6px;
+            flex-wrap: wrap;
         }
 
         .song-title {
@@ -198,6 +199,57 @@
         .song-page {
             font-size: 0.8rem;
             color: var(--text-muted);
+        }
+
+        /* 악보 아코디언 영역 */
+        .score-details {
+            margin-top: 12px;
+            padding-top: 10px;
+            border-top: 1px dashed rgba(255, 255, 255, 0.12);
+        }
+
+        .score-summary {
+            cursor: pointer;
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: var(--gold-light);
+            list-style: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 10px;
+            border-radius: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.2s;
+        }
+
+        .score-summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .score-summary:hover {
+            background: rgba(212, 175, 55, 0.2);
+            border-color: var(--gold-accent);
+        }
+
+        .score-box {
+            margin-top: 10px;
+            padding: 14px;
+            background: rgba(15, 21, 32, 0.65);
+            border: 1px dashed rgba(212, 175, 55, 0.35);
+            border-radius: 8px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.84rem;
+        }
+
+        .score-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+            margin: 0 auto;
         }
 
         /* 지휘자 전달사항 칸 스타일 */
@@ -278,6 +330,18 @@
             transform: translateY(-2px);
         }
 
+        .archive-coming-card {
+            background: var(--cathedral-card);
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            border: 1px dashed rgba(212, 175, 55, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         .archive-left {
             display: flex;
             align-items: center;
@@ -291,6 +355,21 @@
             border-radius: 6px;
             border: 1px solid rgba(212, 175, 55, 0.3);
             background: #000;
+            flex-shrink: 0;
+        }
+
+        .archive-thumb-placeholder {
+            width: 75px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            flex-shrink: 0;
         }
 
         .archive-info {
@@ -316,6 +395,7 @@
             font-size: 0.82rem;
             font-weight: 600;
             white-space: nowrap;
+            margin-left: 8px;
         }
 
         .btn-coming {
@@ -324,6 +404,7 @@
             font-weight: 600;
             white-space: nowrap;
             font-style: italic;
+            margin-left: 8px;
         }
 
         /* 재생목록 배너 (썸네일 포함 스타일) */
@@ -401,6 +482,7 @@
             <h3>📢 공지사항</h3>
             <ul class="notice-text">
                 <li>11월부터는 <strong>중앙성가 35권</strong>으로 찬양드립니다.</li>
+                <li>12월 첫째주부터 셋째주까지 <strong>입례송 찬 120장 4절</strong>, <strong>축도송 찬 105장 1절</strong>로 찬양드립니다.</li>
             </ul>
             
             <div class="prayer-section">
@@ -429,32 +511,50 @@
         <div class="schedule-card" style="padding: 16px 20px;">
             <div class="song-row">
                 <div class="song-info">
-                    <h2 class="song-title" style="font-size: 1.02rem;">입례송(여호와는 영이시니)</h2>
+                    <h2 class="song-title" style="font-size: 1.02rem;">입례송(찬송가 120장 4절)</h2>
                 </div>
                 <div class="part-buttons">
-                    <a href="https://youtu.be/cSBDy2iG1Po?si=YeqXXybseDbREQBp" target="_blank" class="btn-chorus">합창</a>
-                    <a href="https://youtu.be/5KweMIM-Flc?si=D668jSG4V3P54nJK" target="_blank" class="btn-part">소프라노</a>
-                    <a href="https://youtu.be/K0YL8ELSIBw?si=LWDZqc78vQrYfQA4" target="_blank" class="btn-part">알토</a>
-                    <a href="https://youtu.be/4XA_fYAZNz0?si=PA1on_EFk33yXqkr" target="_blank" class="btn-part">테너</a>
-                    <a href="https://youtu.be/jwkiOo661bU?si=RRXZRTk7myjoDHPf" target="_blank" class="btn-part">베이스</a>
+                    <a href="https://youtu.be/c6en153TPwk?si=qkJrMGG2MPH1NErx" target="_blank" class="btn-chorus">합창</a>
+                    <a href="https://youtu.be/8wO7cYk7HkU?si=Cb4_9X3Wfiq_Z-RX" target="_blank" class="btn-part">소프라노</a>
+                    <a href="https://youtu.be/Ym8N4iT-Ibg?si=GTQXG7TYMAFSCWWl" target="_blank" class="btn-part">알토</a>
+                    <a href="https://youtu.be/lpWRTV7nQ2I?si=X5E2K0dxzxrPhHaJ" target="_blank" class="btn-part">테너</a>
+                    <a href="https://youtu.be/liEzC2lRRrs?si=eAJLHygK3T34Dh9-" target="_blank" class="btn-part">베이스</a>
                 </div>
             </div>
+            <!-- 찬송가 120장 악보 영역 -->
+            <details class="score-details">
+                <summary class="score-summary">🎼 찬송가 120장 악보 보기</summary>
+                <div class="score-box">
+                    <!-- 아래 img 태그의 src="" 안에 찬송가 120장 악보 이미지 경로(예: hymn120.jpg)를 넣어주세요 -->
+                    <!-- <img src="hymn120.jpg" alt="찬송가 120장 악보"> -->
+                    📄 찬송가 120장 악보 이미지를 업로드해 주세요.
+                </div>
+            </details>
         </div>
 
         <!-- 폐회송 -->
         <div class="schedule-card" style="padding: 16px 20px;">
             <div class="song-row">
                 <div class="song-info">
-                    <h2 class="song-title" style="font-size: 1.02rem;">폐회송(험한 세상 속에서)</h2>
+                    <h2 class="song-title" style="font-size: 1.02rem;">폐회송(찬송가 105장 1절)</h2>
                 </div>
                 <div class="part-buttons">
-                    <a href="https://youtu.be/JmZuBy7htdg?si=cWC05Kairfi_feP5" target="_blank" class="btn-chorus">합창</a>
-                    <a href="https://youtu.be/PzQe23B53r8?si=pamJHxeTN_16zl1X" target="_blank" class="btn-part">소프라노</a>
-                    <a href="https://youtu.be/GP5wDFzf5-Q?si=ew73usZeleTaqfGX" target="_blank" class="btn-part">알토</a>
-                    <a href="https://youtu.be/glsscDFs0MI?si=gkRgjrk48M1lKBLL" target="_blank" class="btn-part">테너</a>
-                    <a href="https://youtu.be/mf3VaX1abbk?si=cPENX9-C7fDuK1Pa" target="_blank" class="btn-part">베이스</a>
+                    <a href="https://youtu.be/30xSq1c2yv4?si=9h6AL0tyr8iVFW_6" target="_blank" class="btn-chorus">합창</a>
+                    <a href="https://youtu.be/DLzdhkO3F5k?si=zxBzFcFTgNW_agtS" target="_blank" class="btn-part">소프라노</a>
+                    <a href="https://youtu.be/da6-0TH4Lm0?si=2Xmqp7EUz3Wi0LZD" target="_blank" class="btn-part">알토</a>
+                    <a href="https://youtu.be/mh49epFMfgE?si=hz7qGeUYPENNTJuh" target="_blank" class="btn-part">테너</a>
+                    <a href="https://youtu.be/OxcSzKovwnI?si=JYSQ_YRkPz1JZ2Gi" target="_blank" class="btn-part">베이스</a>
                 </div>
             </div>
+            <!-- 찬송가 105장 악보 영역 -->
+            <details class="score-details">
+                <summary class="score-summary">🎼 찬송가 105장 악보 보기</summary>
+                <div class="score-box">
+                    <!-- 아래 img 태그의 src="" 안에 찬송가 105장 악보 이미지 경로(예: hymn105.jpg)를 넣어주세요 -->
+                    <!-- <img src="hymn105.jpg" alt="찬송가 105장 악보"> -->
+                    📄 찬송가 105장 악보 이미지를 업로드해 주세요.
+                </div>
+            </details>
         </div>
 
         <!-- 11월 22일 본 찬양 -->
@@ -501,19 +601,119 @@
             </div>
         </div>
 
+        <!-- 12월 6일 본 찬양 -->
+        <div class="schedule-card">
+            <span class="date-badge">12월 6일 주일</span>
+            <div class="song-row">
+                <div class="song-info">
+                    <h2 class="song-title">하나님의 사랑</h2>
+                    <span class="song-page">35권 p.252</span>
+                </div>
+                <div class="part-buttons">
+                    <a href="https://youtu.be/4PUweqSVP78?si=gX6wQH1WTvRyJums" target="_blank" class="btn-chorus">합창</a>
+                    <a href="https://youtu.be/LIUK8EWVzeg?si=Nz1PIpniyaa_jEU9" target="_blank" class="btn-part">소프라노</a>
+                    <a href="https://youtu.be/7Yac40FHBRw?si=UO5fZ0MUSALiowq7" target="_blank" class="btn-part">알토</a>
+                    <a href="https://youtu.be/0LLEz7zyWak?si=IyjpblfMbLAhc9Gq" target="_blank" class="btn-part">테너</a>
+                    <a href="https://youtu.be/NgYcFiUcTeg?si=rgL8Ih5y2bJiNqr8" target="_blank" class="btn-part">베이스</a>
+                </div>
+            </div>
+            <!-- 지휘자 전달사항 칸 -->
+            <div class="conductor-note">
+                <div class="conductor-title">📌 지휘자 전달사항</div>
+            </div>
+        </div>
+
+        <!-- 12월 13일 본 찬양 -->
+        <div class="schedule-card">
+            <span class="date-badge">12월 13일 주일</span>
+            <div class="song-row">
+                <div class="song-info">
+                    <h2 class="song-title">사랑의 주 예수</h2>
+                    <span class="song-page">&lt;칸타타 크리스마스 이야기 中, 복사악보&gt;</span>
+                </div>
+                <div class="part-buttons">
+                    <a href="https://youtu.be/yGl3x4KO4sU?si=_4E4BkmcZ1tQsB4L" target="_blank" class="btn-chorus">합창</a>
+                    <a href="https://youtu.be/E9GZm7QOE1I?si=7Aiy6gqIigWGar6a" target="_blank" class="btn-part">소프라노</a>
+                    <a href="https://youtu.be/I32mJn4vXTE?si=Rn8pJBLVZ7RYhj9r" target="_blank" class="btn-part">알토</a>
+                    <a href="https://youtu.be/Ld5mV83OW_A?si=KNkylHIB46eBTgxM" target="_blank" class="btn-part">테너</a>
+                    <a href="https://youtu.be/ul5xMUZSjzc?si=8HIVbrFKOgq8gste" target="_blank" class="btn-part">베이스</a>
+                </div>
+            </div>
+            <!-- 지휘자 전달사항 칸 -->
+            <div class="conductor-note">
+                <div class="conductor-title">📌 지휘자 전달사항</div>
+            </div>
+        </div>
+
+        <!-- 12월 20일 본 찬양 -->
+        <div class="schedule-card">
+            <span class="date-badge">12월 20일 주일</span>
+            <div class="song-row">
+                <div class="song-info">
+                    <h2 class="song-title">기쁘다 구주 오셨네</h2>
+                    <span class="song-page">&lt;칸타타 크리스마스 이야기 中, 복사악보&gt;</span>
+                </div>
+                <div class="part-buttons">
+                    <a href="https://youtu.be/9WtvG0QSflQ?si=wgR-o2OKKlD-f2M3" target="_blank" class="btn-chorus">합창</a>
+                    <a href="https://youtu.be/oHJloN524vo?si=-gPYFVwj1qDNuwJW" target="_blank" class="btn-part">소프라노</a>
+                    <a href="https://youtu.be/mw6QaHfaD4o?si=ZSfkdV-Zvj0xkFwg" target="_blank" class="btn-part">알토</a>
+                    <a href="https://youtu.be/b32RbSj0SyQ?si=MT3kpGX65kThVU8W" target="_blank" class="btn-part">테너</a>
+                    <a href="https://youtu.be/1nDErdQarN8?si=BJ8_WAr1A1sgD8nj" target="_blank" class="btn-part">베이스</a>
+                </div>
+            </div>
+            <!-- 지휘자 전달사항 칸 -->
+            <div class="conductor-note">
+                <div class="conductor-title">📌 지휘자 전달사항</div>
+            </div>
+        </div>
+
+        <!-- 12월 27일 본 찬양 -->
+        <div class="schedule-card">
+            <span class="date-badge">12월 27일 주일</span>
+            <div class="song-row">
+                <div class="song-info">
+                    <h2 class="song-title">날 새롭게 하소서</h2>
+                    <span class="song-page">35권 p.155</span>
+                </div>
+                <div class="part-buttons">
+                    <a href="https://youtu.be/N4x8hTdmcOM?si=-MddNxtQTxrHBpQ8" target="_blank" class="btn-chorus">합창</a>
+                    <a href="https://youtu.be/zhGUyk2pYec?si=hJZ-9q91YfJvQ7By" target="_blank" class="btn-part">소프라노</a>
+                    <a href="https://youtu.be/KSBPMiaUGuY?si=jcUVN9qcYyZxVrF_" target="_blank" class="btn-part">알토</a>
+                    <a href="https://youtu.be/ISwIREPHcJk?si=xh_ool8SokmgUoU3" target="_blank" class="btn-part">테너</a>
+                    <a href="https://youtu.be/_hO08rO5bhk?si=wzoQKHCinMu1c7Yn" target="_blank" class="btn-part">베이스</a>
+                </div>
+            </div>
+            <!-- 지휘자 전달사항 칸 -->
+            <div class="conductor-note">
+                <div class="conductor-title">📌 지휘자 전달사항</div>
+            </div>
+        </div>
+
         <div class="section-title">📁 지난 영상 보기</div>
 
-        <!-- 11월 15일 -->
-        <div style="background: var(--cathedral-card); border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.08); display: flex; justify-content: space-between; align-items: center;">
+        <!-- 다음 주일 영상 대기 슬롯 (항상 상단 유지) -->
+        <div class="archive-coming-card">
             <div class="archive-left">
-                <div style="width: 75px; height: 45px; background: rgba(255,255,255,0.05); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; color: var(--text-muted); border: 1px solid rgba(212,175,55,0.2);">🎹</div>
+                <div class="archive-thumb-placeholder">🎹</div>
+                <div class="archive-info">
+                    <span class="archive-date">11월 22일 주일</span>
+                    <span class="archive-title">2026.11.22. 주일 1부 비전찬양대 "주여 나의 손을 놓지 마소서" <span style="font-size:0.8rem; font-weight:normal; color:var(--text-muted);">p.06</span></span>
+                </div>
+            </div>
+            <span class="btn-coming">Coming Soon</span>
+        </div>
+
+        <!-- 11월 15일 -->
+        <a href="https://youtu.be/2YUdwNvqUcc?si=0--T5d-q3_hcdbEh" target="_blank" class="archive-card">
+            <div class="archive-left">
+                <img src="https://img.youtube.com/vi/2YUdwNvqUcc/hqdefault.jpg" alt="감사의 찬송" class="archive-thumb">
                 <div class="archive-info">
                     <span class="archive-date">11월 15일 주일</span>
                     <span class="archive-title">2026.11.15. 주일 1부 비전찬양대 "감사의 찬송" <span style="font-size:0.8rem; font-weight:normal; color:var(--text-muted);">p.129</span></span>
                 </div>
             </div>
-            <span class="btn-coming">Coming Soon</span>
-        </div>
+            <span class="btn-archive">시청하기 ▶</span>
+        </a>
 
         <!-- 11월 8일 -->
         <a href="https://youtu.be/HlTClDnkxP8?si=209gkNO18zFecyjx" target="_blank" class="archive-card">
