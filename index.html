@@ -112,10 +112,11 @@
             margin-bottom: 4px;
         }
 
+        /* 대표기도 순서 영역 (지나간 일정 숨김 + 다음 차례 강조) */
         .prayer-section {
-            background: rgba(15, 21, 32, 0.6);
+            background: rgba(15, 21, 32, 0.65);
             border: 1px dashed var(--border-gold);
-            border-radius: 8px;
+            border-radius: 10px;
             padding: 12px 14px;
             margin-top: 10px;
         }
@@ -124,18 +125,64 @@
             font-size: 0.85rem;
             font-weight: 700;
             color: var(--gold-accent);
-            margin-bottom: 4px;
+            margin-bottom: 8px;
         }
 
         .prayer-list {
+            list-style: none;
             margin: 0;
-            padding-left: 16px;
-            font-size: 0.88rem;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .prayer-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 10px;
+            border-radius: 8px;
+            background: rgba(23, 32, 51, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.86rem;
             color: #cbd5e1;
         }
 
-        .prayer-list li {
-            margin-bottom: 2px;
+        .prayer-item.next-turn {
+            background: rgba(212, 175, 55, 0.14);
+            border: 1px solid var(--gold-accent);
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .prayer-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .prayer-date {
+            color: var(--gold-light);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .next-badge {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--cathedral-dark);
+            background: var(--gold-accent);
+            padding: 2px 8px;
+            border-radius: 999px;
+            white-space: nowrap;
+        }
+
+        .prayer-empty {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            padding: 4px 2px;
         }
 
         /* 섹션 타이틀 */
@@ -475,21 +522,17 @@
             <h1>광주은광교회 비전찬양대</h1>
         </header>
 
-        <!-- 공지사항 카드 (대표기도 순서 포함) -->
+        <!-- 공지사항 카드 (대표기도 순서 자동 표시 포함) -->
         <div class="notice-card">
             <h3>📢 공지사항</h3>
             <ul class="notice-text">
                 <li>11월부터는 <strong>중앙성가 35권</strong>으로 찬양드립니다.</li>
-                <li>12월 첫째주부터 셋째주까지 <strong>입례송 찬 120장 4절</strong>, <strong>축도송 찬 105장 1절</strong>로 바뀝니다.</li>
+                <li>12월 첫째주부터 셋째주까지 <strong>입례송 찬 120장 4절</strong>, <strong>축도송 찬 105장 1절</strong>로 찬양드립니다.</li>
             </ul>
             
             <div class="prayer-section">
                 <div class="prayer-title">🙏 대표기도 순서</div>
-                <ul class="prayer-list">
-                    <li>11/15: 이종호 집사</li>
-                    <li><strong>11/22: 이필윤 집사</strong> (이번 주)</li>
-                    <li>11/29: 조명숙 권사</li>
-                </ul>
+                <ul class="prayer-list" id="prayer-list"></ul>
             </div>
         </div>
 
@@ -674,89 +717,4 @@
                     <a href="https://youtu.be/zhGUyk2pYec?si=hJZ-9q91YfJvQ7By" target="_blank" class="btn-part">소프라노</a>
                     <a href="https://youtu.be/KSBPMiaUGuY?si=jcUVN9qcYyZxVrF_" target="_blank" class="btn-part">알토</a>
                     <a href="https://youtu.be/ISwIREPHcJk?si=xh_ool8SokmgUoU3" target="_blank" class="btn-part">테너</a>
-                    <a href="https://youtu.be/_hO08rO5bhk?si=wzoQKHCinMu1c7Yn" target="_blank" class="btn-part">베이스</a>
-                </div>
-            </div>
-            <!-- 지휘자 전달사항 칸 -->
-            <div class="conductor-note">
-                <div class="conductor-title">📌 지휘자 전달사항</div>
-            </div>
-        </div>
-
-        <div class="section-title">📁 지난 영상 보기</div>
-
-        <!-- 다음 주일 영상 대기 슬롯 (항상 상단 유지) -->
-        <div class="archive-coming-card">
-            <div class="archive-left">
-                <div class="archive-thumb-placeholder">🎹</div>
-                <div class="archive-info">
-                    <span class="archive-date">11월 22일 주일</span>
-                    <span class="archive-title">2026.11.22. 주일 1부 비전찬양대 "주여 나의 손을 놓지 마소서" <span style="font-size:0.8rem; font-weight:normal; color:var(--text-muted);">p.06</span></span>
-                </div>
-            </div>
-            <span class="btn-coming">Coming Soon</span>
-        </div>
-
-        <!-- 11월 15일 -->
-        <a href="https://youtu.be/2YUdwNvqUcc?si=0--T5d-q3_hcdbEh" target="_blank" class="archive-card">
-            <div class="archive-left">
-                <img src="https://img.youtube.com/vi/2YUdwNvqUcc/hqdefault.jpg" alt="감사의 찬송" class="archive-thumb">
-                <div class="archive-info">
-                    <span class="archive-date">11월 15일 주일</span>
-                    <span class="archive-title">2026.11.15. 주일 1부 비전찬양대 "감사의 찬송" <span style="font-size:0.8rem; font-weight:normal; color:var(--text-muted);">p.129</span></span>
-                </div>
-            </div>
-            <span class="btn-archive">시청하기 ▶</span>
-        </a>
-
-        <!-- 11월 8일 -->
-        <a href="https://youtu.be/HlTClDnkxP8?si=209gkNO18zFecyjx" target="_blank" class="archive-card">
-            <div class="archive-left">
-                <img src="https://img.youtube.com/vi/HlTClDnkxP8/hqdefault.jpg" alt="주의 손에 나의 손을 포개고" class="archive-thumb">
-                <div class="archive-info">
-                    <span class="archive-date">11월 8일 주일</span>
-                    <span class="archive-title">2026.11.08. 주일 1부 비전찬양대 "주의 손에 나의 손을 포개고" <span style="font-size:0.8rem; font-weight:normal; color:var(--text-muted);">p.14</span></span>
-                </div>
-            </div>
-            <span class="btn-archive">시청하기 ▶</span>
-        </a>
-
-        <!-- 11월 1일 -->
-        <a href="https://youtu.be/oS7Rvag7QfE?si=tUzH8gUFmIYzfZk0" target="_blank" class="archive-card">
-            <div class="archive-left">
-                <img src="https://img.youtube.com/vi/oS7Rvag7QfE/hqdefault.jpg" alt="여겨주심으로" class="archive-thumb">
-                <div class="archive-info">
-                    <span class="archive-date">11월 1일 주일</span>
-                    <span class="archive-title">2026.11.01. 주일 1부 비전찬양대 "여겨주심으로" <span style="font-size:0.8rem; font-weight:normal; color:var(--text-muted);">p.186</span></span>
-                </div>
-            </div>
-            <span class="btn-archive">시청하기 ▶</span>
-        </a>
-
-        <!-- 하단 재생목록 배너 (썸네일 포함) -->
-        <a href="https://youtube.com/playlist?list=PLrM9jhLzTA6OaqTPzFxU-nN9vFwt0H0XI&si=dwsT5vgRNrtrNYuV" target="_blank" class="playlist-banner" style="margin-top: 25px;">
-            <img src="https://img.youtube.com/vi/2YUdwNvqUcc/hqdefault.jpg" alt="광주은광TV 재생목록 썸네일" class="playlist-thumb">
-            <div class="playlist-info">
-                <div class="playlist-title">🎵 광주은광교회 '찬양대' 재생목록 전체보기</div>
-                <p class="playlist-desc">더 많은 영상은 광주은광TV에서 ▶</p>
-            </div>
-        </a>
-
-        <footer>
-            <p>&copy; Gwangju Eungwang Church Vision Choir. All rights reserved.</p>
-        </footer>
-    </div>
-
-    <script>
-        // 접속하는 당일의 날짜를 자동으로 계산하여 상단에 표시
-        const d = new Date();
-        const year = d.getFullYear();
-        const month = String(d.getMonth() + 1).padStart(2, '0');
-        const day = String(d.getDate()).padStart(2, '0');
-        const days = ['일', '월', '화', '수', '목', '금', '토'];
-        const dayOfWeek = days[d.getDay()];
-        
-        document.getElementById('today-date-badge').innerText = `📅 오늘 날짜: ${year}년 ${month}월 ${day}일 (${dayOfWeek})`;
-    </script>
-</body>
-</html>
+                    <a href="
